@@ -13,7 +13,7 @@ def get_birthdays_per_week(users):
     # Проходження через кожного користувача та перевірка, чи потрапляє його день народження у наступний тиждень
     upcoming_birthdays = []
     for user in users:
-        if next_week_start <= user["birthday"] < next_week_end:
+        if next_week_start <= user["birthday"].replace(year=current_date.year) < next_week_end:
             upcoming_birthdays.append(user)
 
     # Вивід списку користувачів з днями народження на наступному тижні
